@@ -231,5 +231,5 @@ def write_stats_to_file(stats: dict, name: str, path: Path) -> None:
 
 if __name__ == "__main__":
     queried_monster_data = get_monster_stats()
-    new_data = transorm_monster_stats(queried_monster_data)
+    new_data = transform_monster_stats(queried_monster_data)
     write_stats_to_file(new_data, "monster_stats", data_path)
