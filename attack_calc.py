@@ -1,7 +1,14 @@
 import math
 import random as rand
 
-def calc_effective_melee_strength_level(base_level: int, boost: int, prayer: float, stance_bonus: int = 0, void: bool = False) -> int:
+
+def calc_effective_melee_strength_level(
+    base_level: int,
+    boost: int,
+    prayer: float,
+    stance_bonus: int = 0,
+    void: bool = False,
+) -> int:
     """Calcuate a player's effective melee strength level
 
     Args:
@@ -24,8 +31,15 @@ def calc_effective_melee_strength_level(base_level: int, boost: int, prayer: flo
     effective_level = math.floor(effective_level)
     return effective_level
 
+
 # Potential DRY violations here, but I want granularity between the effective level calculations for now esp with elite / reg void, future refactors may include combining functions
-def calc_effective_melee_attack_level(base_level: int, boost: int, prayer: float, stance_bonus: int = 0, void: bool = False) -> int:
+def calc_effective_melee_attack_level(
+    base_level: int,
+    boost: int,
+    prayer: float,
+    stance_bonus: int = 0,
+    void: bool = False,
+) -> int:
     """Calcuate a player's effective melee attack level
 
     Args:
@@ -48,7 +62,14 @@ def calc_effective_melee_attack_level(base_level: int, boost: int, prayer: float
     effective_level = math.floor(effective_level)
     return effective_level
 
-def calc_effective_range_strength_level(base_level: int, boost: int, prayer: float, stance_bonus: int = 0, void: bool = False) -> int:
+
+def calc_effective_range_strength_level(
+    base_level: int,
+    boost: int,
+    prayer: float,
+    stance_bonus: int = 0,
+    void: bool = False,
+) -> int:
     """Calcuate a player's effective range strength level
 
     Args:
@@ -70,7 +91,14 @@ def calc_effective_range_strength_level(base_level: int, boost: int, prayer: flo
     effective_level = math.floor(effective_level)
     return effective_level
 
-def calc_effective_range_attack_level(base_level: int, boost: int, prayer: float, stance_bonus: int = 0, void: bool = False) -> int:
+
+def calc_effective_range_attack_level(
+    base_level: int,
+    boost: int,
+    prayer: float,
+    stance_bonus: int = 0,
+    void: bool = False,
+) -> int:
     """Calcuate a player's effective range level
 
     Args:
@@ -92,7 +120,14 @@ def calc_effective_range_attack_level(base_level: int, boost: int, prayer: float
     effective_level = math.floor(effective_level)
     return effective_level
 
-def calc_effective_magic_level(base_level: int, boost: int, prayer: float, stance_bonus: int = 0, void: bool = False) -> int:
+
+def calc_effective_magic_level(
+    base_level: int,
+    boost: int,
+    prayer: float,
+    stance_bonus: int = 0,
+    void: bool = False,
+) -> int:
     """Calculate a player's effective magic level
 
     Args:
@@ -114,7 +149,10 @@ def calc_effective_magic_level(base_level: int, boost: int, prayer: float, stanc
     effective_level = math.floor(effective_level)
     return effective_level
 
-def calc_effective_defence_level(base_level: int, boost: int, prayer: float, stance_bonus: int = 0) -> int:
+
+def calc_effective_defence_level(
+    base_level: int, boost: int, prayer: float, stance_bonus: int = 0
+) -> int:
     """Calculate a player's effective defence level
 
     Args:
@@ -133,7 +171,10 @@ def calc_effective_defence_level(base_level: int, boost: int, prayer: float, sta
     effective_level = math.floor(effective_level)
     return effective_level
 
-def calc_max_melee_hit(effective_strength_level: int, equipment_bonus: int, target_bonus: float = 1.0) -> int:
+
+def calc_max_melee_hit(
+    effective_strength_level: int, equipment_bonus: int, target_bonus: float = 1.0
+) -> int:
     """Calculates the maximum rollable hit for a melee attack
 
     Args:
@@ -150,7 +191,10 @@ def calc_max_melee_hit(effective_strength_level: int, equipment_bonus: int, targ
     max_hit = math.floor(max_hit * target_bonus)
     return max_hit
 
-def calc_range_max_hit(effective_range_level: int, equipment_bonus: int, target_bonus: float = 1.0) -> int:
+
+def calc_range_max_hit(
+    effective_range_level: int, equipment_bonus: int, target_bonus: float = 1.0
+) -> int:
     """Calculates the maximum rollable hit for a range attack
 
     Args:
@@ -167,7 +211,10 @@ def calc_range_max_hit(effective_range_level: int, equipment_bonus: int, target_
     max_hit = math.floor(max_hit * target_bonus)
     return max_hit
 
-def calc_max_attack_roll(effective_attack_level: int, equipment_bonus: int, target_bonus: float = 1.0) -> int:
+
+def calc_max_attack_roll(
+    effective_attack_level: int, equipment_bonus: int, target_bonus: float = 1.0
+) -> int:
     """Calculates an attack's maximum possible accuracy roll
 
     Args:
@@ -185,6 +232,7 @@ def calc_max_attack_roll(effective_attack_level: int, equipment_bonus: int, targ
         attack_roll = 0
     return attack_roll
 
+
 def calc_npc_max_defence_roll(base_level: int, style_bonus: int) -> int:
     """Calculate an NPC's maximum defence roll
 
@@ -200,7 +248,10 @@ def calc_npc_max_defence_roll(base_level: int, style_bonus: int) -> int:
         defence_roll = 0
     return defence_roll
 
-def calc_player_max_defence_roll(effective_defence_level: int, equipment_bonus: int) -> int:
+
+def calc_player_max_defence_roll(
+    effective_defence_level: int, equipment_bonus: int
+) -> int:
     """Calculate a player's maximum defence roll
 
     Args:
@@ -215,7 +266,14 @@ def calc_player_max_defence_roll(effective_defence_level: int, equipment_bonus: 
         defence_roll = 0
     return defence_roll
 
-def calc_player_max_magic_defence_roll(magic_level: int, magic_boost: int, effective_defence_level: int, equipment_bonus: int, prayer: float = 1.0) -> int:
+
+def calc_player_max_magic_defence_roll(
+    magic_level: int,
+    magic_boost: int,
+    effective_defence_level: int,
+    equipment_bonus: int,
+    prayer: float = 1.0,
+) -> int:
     """Calculates a player's maximum defence roll when attacked with magic
 
     Args:
@@ -229,19 +287,20 @@ def calc_player_max_magic_defence_roll(magic_level: int, magic_boost: int, effec
         int: Player's maximum defence roll against magic attacks
     """
     effective_defence_level = math.floor(effective_defence_level * 0.3)
-    
+
     magic_level = (magic_level + magic_boost) * prayer
     magic_level = math.floor(magic_level)
     effective_magic_level = math.floor(magic_level * 0.7)
 
     effective_level = effective_magic_level + effective_defence_level
-    
+
     magic_defence_roll = effective_level * (equipment_bonus + 64)
 
     if magic_defence_roll < 0:
         magic_defence_roll = 0
 
     return magic_defence_roll
+
 
 def roll_attack(max_attack_roll: int, max_defence_roll: int) -> bool:
     """Randomly rolls an attack against a defence for a chance of a hit
@@ -257,7 +316,8 @@ def roll_attack(max_attack_roll: int, max_defence_roll: int) -> bool:
     defence_roll = rand.randrange(max_defence_roll)
 
     return attack_roll > defence_roll
-    
+
+
 def calc_hit_chance(max_attack_roll: int, max_defence_roll: int) -> float:
     """Calculates the chances of an attack landing against a defence
 
@@ -269,6 +329,18 @@ def calc_hit_chance(max_attack_roll: int, max_defence_roll: int) -> float:
         float: a probability of an attack hitting, between 0 and 1
     """
     if max_attack_roll > max_defence_roll:
-        return (1 - ( (max_defence_roll + 2) / (2 * (max_attack_roll + 1)) ) )
+        return 1 - ((max_defence_roll + 2) / (2 * (max_attack_roll + 1)))
     else:
-        return (max_attack_roll / (2 * (max_defence_roll + 1)))
+        return max_attack_roll / (2 * (max_defence_roll + 1))
+
+
+def roll_hit_damage_normal(max_hit: int) -> int:
+    """random rolls a number between 0 and max_hit
+
+    Args:
+        max_hit (int): the max hit to roll
+
+    Returns:
+        int: a number between - and max_hit
+    """
+    return rand.randrange(max_hit)
