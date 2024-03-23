@@ -108,12 +108,12 @@ def transform_equipment_stats(equipment_stats: dict):
                 "magic": transformed_gear["Magic defence bonus"],
                 "ranged": transformed_gear["Range defence bonus"],
             },
-            "isTwoHanded": False,
+            "is_2h": False,
         }
 
         if new_gear[equipment]["slot"] == "2h":
             new_gear[equipment]["slot"] = "weapon"
-            new_gear[equipment]["isTwoHanded"] = True
+            new_gear[equipment]["is_2h"] = True
 
     return new_gear
 

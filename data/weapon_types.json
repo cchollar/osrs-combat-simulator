@@ -1,0 +1,428 @@
+{
+    "2h Sword": {
+        "chop": {
+            "attack_type": "slash",
+            "weapon_style": "accurate"
+        },
+        "slash": {
+            "attack_type": "slash",
+            "weapon_style": "aggressive"
+        },
+        "smash": {
+            "attack_type": "crush",
+            "weapon_style": "aggressive"
+        },
+        "block": {
+            "attack_type": "slash",
+            "weapon_style": "defensive"
+        }
+    },
+    "Axe": {
+        "chop": {
+            "attack_type": "slash",
+            "weapon_style": "accurate"
+        },
+        "hack": {
+            "attack_type": "slash",
+            "weapon_style": "aggressive"
+        },
+        "smash": {
+            "attack_type": "crush",
+            "weapon_style": "aggressive"
+        },
+        "block": {
+            "attack_type": "slash",
+            "weapon_style": "defensive"
+        }
+    },
+    "Banner": {
+        "lunge": {
+            "attack_type": "stab",
+            "weapon_style": "accurate"
+        },
+        "swipe": {
+            "attack_type": "slash",
+            "weapon_style": "aggressive"
+        },
+        "pound": {
+            "attack_type": "crush",
+            "weapon_style": "controlled"
+        },
+        "block": {
+            "attack_type": "stab",
+            "weapon_style": "defensive"
+        }
+    },
+    "Blunt": {
+        "pound": {
+            "attack_type": "crush",
+            "weapon_style": "accurate"
+        },
+        "pummel": {
+            "attack_type": "crush",
+            "weapon_style": "aggressive"
+        },
+        "block": {
+            "attack_type": "crush",
+            "weapon_style": "defensive"
+        }
+    },
+    "Bludgeon": {
+        "pound": {
+            "attack_type": "crush",
+            "weapon_style": "aggressive"
+        },
+        "pummel": {
+            "attack_type": "crush",
+            "weapon_style": "aggressive"
+        },
+        "smash": {
+            "attack_type": "crush",
+            "weapon_style": "aggressive"
+        }
+    },
+    "Bulwark": {
+        "pummel": {
+            "attack_type": "crush",
+            "weapon_style": "accurate"
+        },
+        "block": {
+            "attack_type": "none",
+            "weapon_style": "none"
+        }
+    },
+    "Claw": {
+        "chop": {
+            "attack_type": "slash",
+            "weapon_style": "accurate"
+        },
+        "slash": {
+            "attack_type": "slash",
+            "weapon_style": "aggressive"
+        },
+        "lunge": {
+            "attack_type": "stab",
+            "weapon_style": "controlled"
+        },
+        "block": {
+            "attack_type": "slash",
+            "weapon_style": "defensive"
+        }
+    },
+    "Partisan": {
+        "stab": {
+            "attack_type": "stab",
+            "weapon_style": "accurate"
+        },
+        "lunge": {
+            "attack_type": "stab",
+            "weapon_style": "aggressive"
+        },
+        "pound": {
+            "attack_type": "crush",
+            "weapon_style": "aggressive"
+        },
+        "block": {
+            "attack_type": "stab",
+            "weapon_style": "defensive"
+        }
+    },
+    "Pickaxe": {
+        "spike": {
+            "attack_type": "stab",
+            "weapon_style": "accurate"
+        },
+        "impale": {
+            "attack_type": "stab",
+            "weapon_style": "aggressive"
+        },
+        "smash": {
+            "attack_type": "crush",
+            "weapon_style": "aggressive"
+        },
+        "block": {
+            "attack_type": "stab",
+            "weapon_style": "defensive"
+        }
+    },
+    "Polearm": {
+        "jab": {
+            "attack_type": "stab",
+            "weapon_style": "controlled"
+        },
+        "swipe": {
+            "attack_type": "slash",
+            "weapon_style": "aggressive"
+        },
+        "fend": {
+            "attack_type": "stab",
+            "weapon_style": "defensive"
+        }
+    },
+    "Polestaff": {
+        "bash": {
+            "attack_type": "crush",
+            "weapon_style": "accurate"
+        },
+        "pound": {
+            "attack_type": "crush",
+            "weapon_style": "aggressive"
+        },
+        "block": {
+            "attack_type": "crush",
+            "weapon_style": "defensive"
+        }
+    },
+    "Scythe": {
+        "reap": {
+            "attack_type": "slash",
+            "weapon_style": "accurate"
+        },
+        "chop": {
+            "attack_type": "slash",
+            "weapon_style": "aggressive"
+        },
+        "jab": {
+            "attack_type": "crush",
+            "weapon_style": "aggressive"
+        },
+        "block": {
+            "attack_type": "slash",
+            "weapon_style": "defensive"
+        }
+    },
+    "Slash Sword": {
+        "chop": {
+            "attack_type": "slash",
+            "weapon_style": "accurate"
+        },
+        "slash": {
+            "attack_type": "slash",
+            "weapon_style": "aggressive"
+        },
+        "lunge": {
+            "attack_type": "stab",
+            "weapon_style": "controlled"
+        },
+        "block": {
+            "attack_type": "slash",
+            "weapon_style": "defensive"
+        }
+    },
+    "Spear": {
+        "lunge": {
+            "attack_type": "stab",
+            "weapon_style": "controlled"
+        },
+        "swipe": {
+            "attack_type": "slash",
+            "weapon_style": "controlled"
+        },
+        "pound": {
+            "attack_type": "crush",
+            "weapon_style": "controlled"
+        },
+        "block": {
+            "attack_type": "stab",
+            "weapon_style": "defensive"
+        }
+    },
+    "Spiked": {
+        "pound": {
+            "attack_type": "crush",
+            "weapon_style": "accurate"
+        },
+        "pummel": {
+            "attack_type": "crush",
+            "weapon_style": "aggressive"
+        },
+        "spike": {
+            "attack_type": "stab",
+            "weapon_style": "controlled"
+        },
+        "block": {
+            "attack_type": "crush",
+            "weapon_style": "defensive"
+        }
+    },
+    "Stab Sword": {
+        "stab": {
+            "attack_type": "stab",
+            "weapon_style": "accurate"
+        },
+        "lunge": {
+            "attack_type": "stab",
+            "weapon_style": "aggressive"
+        },
+        "slash": {
+            "attack_type": "slash",
+            "weapon_style": "aggressive"
+        },
+        "block": {
+            "attack_type": "stab",
+            "weapon_style": "defensive"
+        }
+    },
+    "Unarmed": {
+        "punch": {
+            "attack_type": "crush",
+            "weapon_style": "accurate"
+        },
+        "kick": {
+            "attack_type": "crush",
+            "weapon_style": "aggressive"
+        },
+        "block": {
+            "attack_type": "crush",
+            "weapon_style": "defensive"
+        }
+    },
+    "Whip": {
+        "flick": {
+            "attack_type": "slash",
+            "weapon_style": "accurate"
+        },
+        "lash": {
+            "attack_type": "slash",
+            "weapon_style": "controlled"
+        },
+        "deflect": {
+            "attack_type": "slash",
+            "weapon_style": "defensive"
+        }
+    },
+    "Bow": {
+        "accurate": {
+            "attack_type": "ranged",
+            "weapon_style": "accurate"
+        },
+        "rapid": {
+            "attack_type": "ranged",
+            "weapon_style": "rapid"
+        },
+        "longrange": {
+            "attack_type": "ranged",
+            "weapon_style": "longrange"
+        }
+    },
+    "Chinchompa": {
+        "short_fuse": {
+            "attack_type": "ranged",
+            "weapon_style": "short_fuse"
+        },
+        "medium_fuse": {
+            "attack_type": "ranged",
+            "weapon_style": "medium_fuse"
+        },
+        "long)fuse": {
+            "attack_type": "ranged",
+            "weapon_style": "long_fuse"
+        }
+    },
+    "Crossbow": {
+        "accurate": {
+            "attack_type": "ranged",
+            "weapon_style": "accurate"
+        },
+        "rapid": {
+            "attack_type": "ranged",
+            "weapon_style": "rapid"
+        },
+        "longrange": {
+            "attack_type": "ranged",
+            "weapon_style": "longrange"
+        }
+    },
+    "Thrown": {
+        "accurate": {
+            "attack_type": "ranged",
+            "weapon_style": "accurate"
+        },
+        "rapid": {
+            "attack_type": "ranged",
+            "weapon_style": "rapid"
+        },
+        "longrange": {
+            "attack_type": "ranged",
+            "weapon_style": "longrange"
+        }
+    },
+    "Bladed Staff": {
+        "jab": {
+            "attack_type": "stab",
+            "weapon_style": "accurate"
+        },
+        "swipe": {
+            "attack_type": "slash",
+            "weapon_style": "aggressive"
+        },
+        "fend": {
+            "attack_type": "crush",
+            "weapon_style": "defensive"
+        },
+        "spell_defensive": {
+            "attack_type": "magic",
+            "weapon_style": "defensive_autocast"
+        },
+        "spell": {
+            "attack_type": "magic",
+            "weapon_style": "autocast"
+        }
+    },
+    "Powered Staff": {
+        "accurate": {
+            "attack_type": "magic",
+            "weapon_style": "accurate"
+        },
+        "longrange": {
+            "attack_type": "magic",
+            "weapon_style": "longrange"
+        }
+    },
+    "Powered Wand": {
+        "accurate": {
+            "attack_type": "magic",
+            "weapon_style": "accurate"
+        },
+        "longrange": {
+            "attack_type": "magic",
+            "weapon_style": "longrange"
+        }
+    },
+    "Staff": {
+        "bash": {
+            "attack_type": "crush",
+            "weapon_style": "accurate"
+        },
+        "pound": {
+            "attack_type": "crush",
+            "weapon_style": "aggressive"
+        },
+        "focus": {
+            "attack_type": "crush",
+            "weapon_style": "defensive"
+        },
+        "spell_defensive": {
+            "attack_type": "magic",
+            "weapon_style": "defensive_autocast"
+        },
+        "spell": {
+            "attack_type": "magic",
+            "weapon_style": "autocast"
+        }
+    },
+    "Salamander": {
+        "scorch": {
+            "attack_type": "slash",
+            "weapon_style": "aggressive"
+        },
+        "flare": {
+            "attack_type": "ranged",
+            "weapon_style": "accurate"
+        },
+        "blaze": {
+            "attack_type": "magic",
+            "weapon_style": "defensive"
+        }
+    }
+}
