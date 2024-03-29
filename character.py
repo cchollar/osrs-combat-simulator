@@ -1,4 +1,5 @@
 import attack_calc as ac
+import equipment as equipment
 from abc import ABC, abstractmethod
 from typing import List, Union
 from dataclasses import dataclass, field
@@ -96,6 +97,8 @@ class Player(Character):
         self.magic_defence: int = 0
         self.range_defence: int = 0
 
+        self.weapon_slot: Union[None, equipment.Weapon]
+
         self.boost: int = 0
 
         self.effective_melee_attack: int
@@ -128,8 +131,12 @@ class Player(Character):
         self.get_effective_melee_attack()
         self.get_effective_melee_strength()
 
-        max_hit = ac.calc_max_melee_hit(self.effective_melee_strength, 0)
-        max_attack_roll = ac.calc_max_attack_roll(self.effective_melee_attack, 0)
+        max_hit = ac.calc_max_melee_hit(
+            self.effective_melee_strength, self.strength_bonus
+        )
+        max_attack_roll = ac.calc_max_attack_roll(
+            self.effective_melee_attack, self.slash_bonus
+        )
         enemy_max_defence_roll = ac.calc_npc_max_defence_roll(
             enemy.combat_stats.defence, enemy.defensive_stat.crush_defence_bonus
         )
@@ -144,6 +151,28 @@ class Player(Character):
 
     def take_damage(self, damage_value):
         self.combat_stats.hitpoints -= damage_value
+
+    def equip(self, gear: equipment.Gear):
+        self.weapon_slot = gear
+        self.calculate_player_stats()
+
+    def calculate_player_stats(self):
+        self.stab_bonus += self.weapon_slot.attack_bonuses.stab
+        self.slash_bonus += self.weapon_slot.attack_bonuses.slash
+        self.crush_bonus += self.weapon_slot.attack_bonuses.crush
+        self.strength_bonus += self.weapon_slot.strength_bonuses.melee_strength
+        self.magic_attack_bonus += self.weapon_slot.attack_bonuses.magic
+        self.magic_strength_bonus += self.weapon_slot.strength_bonuses.magic_strength
+        self.range_attack_bonus += self.weapon_slot.attack_bonuses.ranged
+        self.range_strength_bonus += self.weapon_slot.strength_bonuses.range_strength
+
+        self.stab_defence += self.weapon_slot.defence_bonuses.stab
+        self.slash_defence += self.weapon_slot.defence_bonuses.slash
+        self.crush_defence += self.weapon_slot.defence_bonuses.crush
+        self.magic_defence += self.weapon_slot.defence_bonuses.magic
+        self.range_defence += self.weapon_slot.defence_bonuses.ranged
+
+        self.attack_speed = self.weapon_slot.speed
 
     def die(self):
         print(f"Player has died")
@@ -229,6 +258,16 @@ def search_and_construct_monster(monster_string: str):
 
 
 if __name__ == "__main__":
+
+    script_path = Path(__file__).resolve()
+    data_path = script_path.parent / "data"
+    weapon_stats = json.loads((data_path / "equipment_stats.json").read_text())
+    weapon_types = json.loads((data_path / "weapon_types.json").read_text())
+
+    ags = equipment.WeaponFactory.create_weapon(
+        "Armadyl godsword", weapon_stats, weapon_types
+    )
+
     ticks_to_kill = []
     for _ in range(100):
         counter = 0
@@ -238,11 +277,12 @@ if __name__ == "__main__":
                 hitpoints=99, strength=99, attack=99, defence=99, range=99, magic=99
             )
         )
+        player.equip(ags)
+        player.weapon_slot.select_stance("slash")
         while crab.combat_stats.hitpoints > 0:
             player.attempt_attack(crab)
             counter += player.attack_speed
-        counter -= player.attack_speed
         ticks_to_kill.append(counter)
 
-    average_ttk = (sum(ticks_to_kill) / len(ticks_to_kill)) * 0.6
+    average_ttk = sum(ticks_to_kill) / len(ticks_to_kill) * 0.6
     print(average_ttk)

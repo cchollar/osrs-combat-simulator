@@ -175,6 +175,176 @@ class Armour(Gear):
     defence_bonuses: DefenceBonuses
 
 
+@dataclass
+class Head(Armour):
+    pass
+
+
+@dataclass
+class Neck(Armour):
+    pass
+
+
+@dataclass
+class Body(Armour):
+    pass
+
+
+@dataclass
+class Legs(Armour):
+    pass
+
+
+@dataclass
+class Feet(Armour):
+    pass
+
+
+@dataclass
+class Cape(Armour):
+    pass
+
+
+@dataclass
+class Hands(Armour):
+    pass
+
+
+@dataclass
+class Shield(Armour):
+    pass
+
+
+@dataclass
+class Ammo(Armour):
+    pass
+
+
+class ArmourFactory:
+    @staticmethod
+    def create_armour(armour_name: str, armour_data: dict) -> Armour:
+        if armour_name in armour_data:
+            strength_bonuses = StrengthBonuses(**armour_data["bonuses"])
+            attack_bonuses = AttackBonuses(**armour_data["offensive"])
+            defence_bonuses = DefenceBonuses(**armour_data["defensive"])
+            id = armour_data["id"]
+            name = armour_data["name"]
+            slot = armour_data["slot"]
+            speed = armour_data["speed"]
+            category = armour_data["category"]
+            prayer_bonus = armour_data["prayer_bonus"]
+
+            match slot:
+                case "head":
+                    return Head(
+                        strength_bonuses=strength_bonuses,
+                        attack_bonuses=attack_bonuses,
+                        defence_bonuses=defence_bonuses,
+                        id=id,
+                        name=name,
+                        slot=slot,
+                        speed=speed,
+                        category=category,
+                        prayer_bonus=prayer_bonus,
+                    )
+                case "neck":
+                    return Neck(
+                        strength_bonuses=strength_bonuses,
+                        attack_bonuses=attack_bonuses,
+                        defence_bonuses=defence_bonuses,
+                        id=id,
+                        name=name,
+                        slot=slot,
+                        speed=speed,
+                        category=category,
+                        prayer_bonus=prayer_bonus,
+                    )
+                case "body":
+                    return Body(
+                        strength_bonuses=strength_bonuses,
+                        attack_bonuses=attack_bonuses,
+                        defence_bonuses=defence_bonuses,
+                        id=id,
+                        name=name,
+                        slot=slot,
+                        speed=speed,
+                        category=category,
+                        prayer_bonus=prayer_bonus,
+                    )
+                case "legs":
+                    return Legs(
+                        strength_bonuses=strength_bonuses,
+                        attack_bonuses=attack_bonuses,
+                        defence_bonuses=defence_bonuses,
+                        id=id,
+                        name=name,
+                        slot=slot,
+                        speed=speed,
+                        category=category,
+                        prayer_bonus=prayer_bonus,
+                    )
+                case "feet":
+                    return Feet(
+                        strength_bonuses=strength_bonuses,
+                        attack_bonuses=attack_bonuses,
+                        defence_bonuses=defence_bonuses,
+                        id=id,
+                        name=name,
+                        slot=slot,
+                        speed=speed,
+                        category=category,
+                        prayer_bonus=prayer_bonus,
+                    )
+                case "cape":
+                    return Cape(
+                        strength_bonuses=strength_bonuses,
+                        attack_bonuses=attack_bonuses,
+                        defence_bonuses=defence_bonuses,
+                        id=id,
+                        name=name,
+                        slot=slot,
+                        speed=speed,
+                        category=category,
+                        prayer_bonus=prayer_bonus,
+                    )
+                case "hands":
+                    return Hands(
+                        strength_bonuses=strength_bonuses,
+                        attack_bonuses=attack_bonuses,
+                        defence_bonuses=defence_bonuses,
+                        id=id,
+                        name=name,
+                        slot=slot,
+                        speed=speed,
+                        category=category,
+                        prayer_bonus=prayer_bonus,
+                    )
+                case "shield":
+                    return Shield(
+                        strength_bonuses=strength_bonuses,
+                        attack_bonuses=attack_bonuses,
+                        defence_bonuses=defence_bonuses,
+                        id=id,
+                        name=name,
+                        slot=slot,
+                        speed=speed,
+                        category=category,
+                        prayer_bonus=prayer_bonus,
+                    )
+                case "ammo":
+                    return Ammo(
+                        strength_bonuses=strength_bonuses,
+                        attack_bonuses=attack_bonuses,
+                        defence_bonuses=defence_bonuses,
+                        id=id,
+                        name=name,
+                        slot=slot,
+                        speed=speed,
+                        category=category,
+                        prayer_bonus=prayer_bonus,
+                    )
+
+
 class StanceOptionsFactory:
     @staticmethod
     def create_stance_options(weapon_category):
